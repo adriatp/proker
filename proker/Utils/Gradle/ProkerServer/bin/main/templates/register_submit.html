@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>DPC | Register</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h1>Register</h1>
+        <p th:text="'Id: ' + ${userDTO.id}"></p>
+        <p th:text="'Name: ' + ${userDTO.name}"></p>
+        <p th:text="'Email: ' + ${userDTO.email}"></p>
+        <p th:text="'Password: ' + ${userDTO.pwd}"></p>
+        <a href="/">Go home, you are drunk</a>
+    </body>
+</html>

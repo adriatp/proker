@@ -1,0 +1,6 @@
+[ X ]	1.	Enviar el missatge al servidor utilitzant AJAX (mirar Server DPC)
+[	]	2.	Incloure la llibreria de ProKeR adaptada al servidor
+[	]	3.	Predir a partir del missatge rebut i incloure que fa 
+[	]	4.	Retornar missatge JSON que inclou tota la informacio
+[	]	5. 	Mostrar la informacio en text des del navegador
+[	]	6.	Crear imatge de la taula

@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    background:
+        radial-gradient(black 3px, transparent 4px),
+        radial-gradient(black 3px, transparent 4px),
+        linear-gradient(rgb(36, 56, 47) 4px, transparent 0),
+        linear-gradient(45deg, transparent 74px, transparent 75px, black 75px, black 76px, transparent 77px, transparent 109px),
+        linear-gradient(-45deg, transparent 75px, transparent 76px, black 76px, black 77px, transparent 78px, transparent 109px),
+        rgb(36, 56, 47);
+        background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+        background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+.topnav {
+    height: 70px;
+    width: 100%;
+    background-color: rgba(0,0,0,1.0);
+}
+
+.topnav_title {
+	line-height:70px;
+}
+
+.topnav_title img {
+    display:block;
+    margin:auto;
+    padding-top: 22px;
+}
+
+input {
+    width: 100px;
+    text-align: center;
+}
+
+.info_general_div {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+.inside_general_div {
+    display:flex;
+    flex-direction:column;
+}
+
+table {
+    background-color: white;
+}

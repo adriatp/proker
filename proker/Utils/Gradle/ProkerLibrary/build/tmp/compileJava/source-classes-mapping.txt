@@ -1,0 +1,20 @@
+com/atp/ProkerLibrary/API.java
+ com.atp.ProkerLibrary.API
+com/atp/ProkerLibrary/Carta.java
+ com.atp.ProkerLibrary.Carta
+com/atp/ProkerLibrary/colorComparator.java
+ com.atp.ProkerLibrary.colorComparator
+com/atp/ProkerLibrary/Baralla.java
+ com.atp.ProkerLibrary.Baralla
+com/atp/ProkerLibrary/Combinacio.java
+ com.atp.ProkerLibrary.Combinacio
+com/atp/ProkerLibrary/numberComparator.java
+ com.atp.ProkerLibrary.numberComparator
+com/atp/ProkerLibrary/Ma.java
+ com.atp.ProkerLibrary.Ma
+com/atp/ProkerLibrary/Taula.java
+ com.atp.ProkerLibrary.Taula
+com/atp/ProkerLibrary/Jugador.java
+ com.atp.ProkerLibrary.Jugador
+com/atp/ProkerLibrary/Main.java
+ com.atp.ProkerLibrary.Main

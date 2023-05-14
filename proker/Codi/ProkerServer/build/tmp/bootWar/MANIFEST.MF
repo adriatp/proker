@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Start-Class: com.atp.ProkerServer.Application
+Spring-Boot-Classes: WEB-INF/classes/
+Spring-Boot-Lib: WEB-INF/lib/
+Spring-Boot-Version: 2.3.3.RELEASE
+Main-Class: org.springframework.boot.loader.WarLauncher
+

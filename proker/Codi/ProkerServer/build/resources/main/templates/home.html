@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <title>ProKeR</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+
+<body>
+
+<div class="topnav">
+    <div class="topnav_title">
+        <img src="/images/title.png" width="150px;">
+    </div>
+</div>
+
+<div class="info_general_div">
+
+    <div id="form_parameters" class="inside_general_div">
+        <form>
+            <br><br>
+            <label for="players">Players</label><br>
+            <input id="players" type="number" name="players" min=2 max=9><br><br>
+
+            <label for="hand">Hand</label><br>
+            <input id="hand" type="text" name="hand" maxlength="5"><br><br>
+
+            <label for="flop">Flop</label><br>
+            <input id="flop" type="text" name="flop" maxlength="8"><br><br>
+
+            <label for="turn">Turn</label><br>
+            <input id="turn" type="text" name="turn" maxlength="2"><br><br>
+
+            <label for="river">River</label><br>
+            <input id="river" type="text" name="river" maxlength="2"><br><br><br><br>
+
+            <input type="button" onclick="sendParameters()" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+
+    <br><br><br>
+
+    <div id="div_info" class="inside_general_div">
+        <br><br>
+        <label for="wonGames">Won Games:</label><br>
+        <input type="text" id="wonGames" readonly><br><br>
+        <label for="tiedGames">Tied Games:</label><br>
+        <input type="text" id="tiedGames" readonly><br><br>
+        <label for="lostGames">Lost Games:</label><br>
+        <input type="text" id="lostGames" readonly><br><br>
+        <label for="playedGames">Played Games:</label><br>
+        <input type="text" id="playedGames" readonly><br><br>
+    </div>
+
+    <div class="inside_general_div">
+        <br><br>
+        <table id="table_info">
+            <thead>
+            <tr>
+                <th>%</th>
+                <th>Best hand</th>
+                <th>Win</th>
+                <th>Tie</th>
+                <th>Loss</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>
+
+
+
+</body>
+
+<script src="js/ajax.js"></script>
+<script src="js/codi.js"></script>
+
+</html>

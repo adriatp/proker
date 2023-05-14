@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>DPC | Login</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h1>Login</h1>
+        <p th:text="'Email: ' + ${userDTO.email}" />
+        <p th:text="'Password: ' + ${userDTO.pwd}" />
+        <a href="/">Go home, you are drunk</a>
+    </body>
+</html>

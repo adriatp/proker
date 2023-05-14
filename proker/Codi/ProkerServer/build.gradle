@@ -1,0 +1,32 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.3.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+    id 'war'
+}
+
+group = 'com.atp.ProkerServer'
+version = '1.0'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //  Remote dependencies
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    //  Local dependencies
+    implementation files('C:\\Users\\atp\\Desktop\\Adrià\\Poker\\Proker\\Codi\\ProkerLibrary\\build\\libs\\ProkerLibrary-1.0.jar')
+    compile files('C:\\Users\\atp\\Desktop\\Adrià\\Poker\\Proker\\Codi\\ProkerLibrary\\build\\libs\\ProkerLibrary-1.0.jar')
+}
+
+war {
+    manifest {
+        attributes 'Main-Class': 'com.atp.ProkerServer.Application'
+    }
+}

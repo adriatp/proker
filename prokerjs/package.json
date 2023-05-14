@@ -1,0 +1,26 @@
+{
+  "name": "prokerjs",
+  "version": "1.0.0",
+  "description": "A Holdem Texas Poker probability library",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ciw1c/prokerjs.git"
+  },
+  "keywords": [
+    "poker",
+    "holdem",
+    "texas",
+    "probability"
+  ],
+  "author": "ciw1c",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/ciw1c/prokerjs/issues"
+  },
+  "homepage": "https://github.com/ciw1c/prokerjs#readme"
+}
