@@ -6,7 +6,7 @@
 */
 
 class Hand {
-    constructor() {}
+	constructor() {}
 }
 
 export { Hand };

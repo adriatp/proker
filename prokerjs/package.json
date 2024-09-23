@@ -2,13 +2,14 @@
   "name": "prokerjs",
   "version": "1.0.0",
   "description": "A Holdem Texas Poker probability library",
-  "main": "main.js",
   "scripts": {
+    "start": "npx esbuild src/index.js --bundle --outfile=dist/bundle.js --watch",
+    "build": "esbuild src/index.js --bundle --outfile=dist/bundle.js",
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ciw1c/prokerjs.git"
+    "url": "git+https://github.com/adriatp/prokerjs.git"
   },
   "keywords": [
     "poker",
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/adriatp/prokerjs/issues"
   },
-  "homepage": "https://github.com/adriatp/prokerjs#readme"
+  "homepage": "https://github.com/adriatp/prokerjs#readme",
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
 }
