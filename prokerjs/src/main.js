@@ -1,6 +1,6 @@
-import { Deck } from './deck.js';
-import { Game } from './game.js';
-import { Table } from './table.js';
+import Deck from './deck.js';
+import Game from './game.js';
+import Table from './table.js';
 
 let myDeck = new Deck();
 myDeck.shuffle();

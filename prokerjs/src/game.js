@@ -1,8 +1,8 @@
-import { Deck } from "./deck.js";
-import { Player } from "./player.js";
-import { Table } from "./table.js";
+import Deck from "./deck.js";
+import Player from "./player.js";
+import Table from "./table.js";
 
-class Game {
+export default class Game {
 	constructor(n_players) {
 		//  Initialize attributes
 		this.deck = new Deck();
@@ -39,13 +39,10 @@ class Game {
 		console.log(this.players);
 		console.log(this.players.length);
 		this.players.forEach( (p,i) => {
-			process.stdout.write('Player ' + (i+1) + ':');
+			console.log('Player ' + (i+1) + ':');
 			p.show();
-			process.stdout.write('\n');
 		});
-		process.stdout.write('   Table:');
+		console.log('   Table:');
 		this.table.show();
 	}
 }
-
-export { Game };

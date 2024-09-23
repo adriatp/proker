@@ -1,4 +1,4 @@
-class Player {
+export default class Player {
 	constructor() {
 		this.cards = [null,null];
 	}
@@ -6,9 +6,6 @@ class Player {
 	show() {
 		this.cards.forEach(c => {
 			c.show();
-			process.stdout.write(' ');
 		});
 	}
 }
-
-export { Player };

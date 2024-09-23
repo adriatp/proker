@@ -1,6 +1,6 @@
-import { Card } from "./card.js"
+import Card from "./card.js"
 
-class Deck {
+export default class Deck {
 	constructor() {
 		this.cards = new Array();
 		Card.numbers.forEach(n => {
@@ -13,9 +13,7 @@ class Deck {
 	show() {
 		this.cards.forEach(c => {
 			c.show();
-			process.stdout.write(' ');
 		});
-		process.stdout.write('\n');
 	}
 
 	shuffle() {
@@ -28,5 +26,3 @@ class Deck {
 		return ret_cards;
 	}
 }
-
-export { Deck };

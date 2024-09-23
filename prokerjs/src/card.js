@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
 	static numbers = ['2','3','4','5','6','7','8','9','T','J','Q','K','A'];
 	static suits   = ['S','H','C','D'];
 	static _rep_suits   = ['\u2660','\u2665','\u2666','\u2663'];
@@ -15,8 +15,6 @@ class Card {
 	}
 
 	show() {
-		process.stdout.write(Card.numbers[this.number] + Card._rep_suits[this.suite]);
+		console.log(Card.numbers[this.number] + Card._rep_suits[this.suite]);
 	}
 }
-
-export { Card };

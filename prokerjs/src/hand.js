@@ -5,8 +5,6 @@
     - Podemos comparar dos manos
 */
 
-class Hand {
+export default class Hand {
 	constructor() {}
 }
-
-export { Hand };
