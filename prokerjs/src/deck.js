@@ -20,9 +20,20 @@ export default class Deck {
 		this.cards.sort( () => .5 - Math.random() );
 	}
 
-	deal_cards(n_cards) {
+	deal_n_cards(n_cards) {
 		let ret_cards = this.cards.slice(0, n_cards);
 		this.cards = this.cards.slice(n_cards, this.cards.length);
 		return ret_cards;
+	}
+
+	deal_card(card) {
+		for (let i=0; i<this.cards.length; i++) {
+			if (this.cards[i] == card) {
+				let ret_card = this.cards[i];
+				this.cards.splice(i,1);
+				return ret_card;
+			}
+		}
+		return null;
 	}
 }

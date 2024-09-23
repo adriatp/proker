@@ -7,7 +7,7 @@
     constructor(number, suite) {
       let _tmpNumber = number.toUpperCase();
       if (!_Card.numbers.includes(_tmpNumber))
-        throw new Error("Number is not correct (must be in ['2','3','4','5','6','7','8','9','T','J','Q','K','A']");
+        throw new Error("Number is not correct (must be in ['2','3','4','5','6','7','8','9','T','J','Q','K','A'])");
       let _tmpSuite = suite.toUpperCase();
       if (!_Card.suits.includes(_tmpSuite))
         throw new Error("Suite must be 'S' (Spades), 'H' (Hearts), 'C' (Corbles) or 'D' (Diamonds)");
@@ -16,6 +16,9 @@
     }
     show() {
       console.log(_Card.numbers[this.number] + _Card._rep_suits[this.suite]);
+    }
+    toString() {
+      return _Card.numbers[this.number] + _Card._rep_suits[this.suite];
     }
   };
 
@@ -37,10 +40,20 @@
     shuffle() {
       this.cards.sort(() => 0.5 - Math.random());
     }
-    deal_cards(n_cards) {
+    deal_n_cards(n_cards) {
       let ret_cards = this.cards.slice(0, n_cards);
       this.cards = this.cards.slice(n_cards, this.cards.length);
       return ret_cards;
+    }
+    deal_card(card) {
+      for (let i = 0; i < this.cards.length; i++) {
+        if (this.cards[i] == card) {
+          let ret_card = this.cards[i];
+          this.cards.splice(i, 1);
+          return ret_card;
+        }
+      }
+      return null;
     }
   };
 
@@ -81,17 +94,17 @@
         this.players.push(new Player());
       }
       for (let i = 0; i < n_players; i++) {
-        this.players[i].cards[0] = this.deck.deal_cards(1)[0];
+        this.players[i].cards[0] = this.deck.deal_n_cards(1)[0];
       }
       for (let i = 0; i < n_players; i++) {
-        this.players[i].cards[1] = this.deck.deal_cards(1)[0];
+        this.players[i].cards[1] = this.deck.deal_n_cards(1)[0];
       }
-      this.deck.deal_cards(1);
-      this.table.cards.splice(0, 3, ...this.deck.deal_cards(3));
-      this.deck.deal_cards(1);
-      this.table.cards.splice(3, 1, ...this.deck.deal_cards(1));
-      this.deck.deal_cards(1);
-      this.table.cards.splice(4, 1, ...this.deck.deal_cards(1));
+      this.deck.deal_n_cards(1);
+      this.table.cards.splice(0, 3, ...this.deck.deal_n_cards(3));
+      this.deck.deal_n_cards(1);
+      this.table.cards.splice(3, 1, ...this.deck.deal_n_cards(1));
+      this.deck.deal_n_cards(1);
+      this.table.cards.splice(4, 1, ...this.deck.deal_n_cards(1));
     }
     show() {
       console.log(this.players);
