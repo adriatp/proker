@@ -16,11 +16,11 @@
     "texas",
     "probability"
   ],
-  "author": "ciw1c",
+  "author": "adriatp",
   "license": "MIT",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/ciw1c/prokerjs/issues"
+    "url": "https://github.com/adriatp/prokerjs/issues"
   },
-  "homepage": "https://github.com/ciw1c/prokerjs#readme"
+  "homepage": "https://github.com/adriatp/prokerjs#readme"
 }

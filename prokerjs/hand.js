@@ -9,4 +9,4 @@ class Hand {
     constructor() {}
 }
 
-export {Hand};
+export { Hand };
