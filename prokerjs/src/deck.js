@@ -10,6 +10,13 @@ export default class Deck {
 		});
 	}
 
+	is_free_card(card) {
+		this.cards.forEach(c => {
+			if (c == card) return false;
+		});
+		return true;
+	}
+
 	show() {
 		this.cards.forEach(c => {
 			c.show();
@@ -20,20 +27,26 @@ export default class Deck {
 		this.cards.sort( () => .5 - Math.random() );
 	}
 
-	deal_n_cards(n_cards) {
-		let ret_cards = this.cards.slice(0, n_cards);
-		this.cards = this.cards.slice(n_cards, this.cards.length);
-		return ret_cards;
+	deal_random() {
+		if (this.cards <= 0) 
+			throw("Trying to deal from an empty deck");
+		this.shuffle();
+		let ret_card = this.cards[0];
+		this.cards = this.cards.slice(1);
+		return ret_card;
 	}
 
-	deal_card(card) {
+	remove_cards(cards) {
+		cards.forEach(c => {
+			this.remove_card(c);
+		});
+	}
+
+	remove_card(card) {
 		for (let i=0; i<this.cards.length; i++) {
 			if (this.cards[i] == card) {
-				let ret_card = this.cards[i];
 				this.cards.splice(i,1);
-				return ret_card;
 			}
 		}
-		return null;
 	}
 }

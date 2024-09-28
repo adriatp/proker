@@ -18,4 +18,15 @@ Llibreria per calcular les probabilitats d'una mà de Poker Holdem Texas utilitz
 
 1. Class: Mà
 2. Rep 7 cartes: 5 de la taula i 2 del jugador
-3. Genera totes les combinacions ()
+3. Genera totes les combinacions 
+4. Avalua rank de la ma
+5. Desempata mans del mateix rank
+6. Reparteix cartes
+
+
+t = new Table(6);
+cards = [new Card(''),new Card('')];
+t.deal_to(t.players[0],cards);
+t.get_ranks();
+
+t.test(1);

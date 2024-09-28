@@ -1,3 +1,5 @@
+import Hand from "./hand";
+
 export default class Combination {
 	constructor(cards) {
 		if (cards.length != 7)
@@ -14,7 +16,7 @@ export default class Combination {
 				for (let k=j+1; k<7; k++) {
 					for (let l=k+1; l<7; l++) {
 						for (let m=l+1; m<7; m++) {
-							hands.push([this.cards[i],this.cards[j],this.cards[k],this.cards[l],this.cards[m]]);
+							hands.push(new Hand([this.cards[i],this.cards[j],this.cards[k],this.cards[l],this.cards[m]]));
 						}
 					}
 				}
