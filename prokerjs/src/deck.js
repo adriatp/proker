@@ -11,16 +11,12 @@ export default class Deck {
 	}
 
 	is_free_card(card) {
-		this.cards.forEach(c => {
-			if (c == card) return false;
-		});
-		return true;
-	}
-
-	show() {
-		this.cards.forEach(c => {
-			c.show();
-		});
+		if (! (card instanceof Card))
+			throw("is_free_card must receive an instance of Card");
+		for (let i=0; i<this.cards.length; i++) {
+			if (this.cards[i].toString() == card.toString()) return true;
+		}
+		return false;
 	}
 
 	shuffle() {
@@ -43,10 +39,33 @@ export default class Deck {
 	}
 
 	remove_card(card) {
+		if (! (card instanceof Card))
+			throw("remove_card must receive only an instance of Card");
 		for (let i=0; i<this.cards.length; i++) {
-			if (this.cards[i] == card) {
+			if (this.cards[i].toString() == card.toString()) {
 				this.cards.splice(i,1);
 			}
 		}
+	}
+
+	copy() {
+		let new_deck = new Deck();
+		new_deck.cards = [];
+		this.cards.forEach(c => {
+			new_deck.cards.push(c.copy());
+		});
+		return new_deck;
+	}
+
+	toString() {
+		let cards_str = '';
+		this.cards.forEach(c => {
+			cards_str += `${c.toString()} `;
+		});
+		return cards_str;
+	}
+
+	show() {
+		console.log(this.toString());
 	}
 }

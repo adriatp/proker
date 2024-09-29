@@ -6,9 +6,9 @@ export default class Combination {
 			throw new Error('Combination must have 7 cards');
 		this.cards = cards;
 		this.hands = this.hands();
-		this.best_hand = this.get_best_hand();	
+		this.best_hand = this.get_best_hand();
 	}
-	
+
 	hands() {
 		let hands = [];
 		for (let i=0; i<7; i++) {
@@ -29,7 +29,7 @@ export default class Combination {
 		let best_hand = this.hands[0];
 		for (let i=1; i<this.hands.length; i++) {
 			if (best_hand.compare_to(this.hands[i]) == -1) {
-				best_hand = this.hands[i]
+				best_hand = this.hands[i];
 			}
 		}
 		return best_hand;
