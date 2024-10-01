@@ -93,10 +93,11 @@ export default class Table {
 				new_table.cards[i] = this.cards[i].copy();
 		}
 		new_table.deck = this.deck.copy();
+		new_table.deck.shuffle();
 		new_table.players = [];
 		for (let i=0; i<this.players.length; i++) {
 			if (this.players[i] != null)
-				new_table.players[i] = this.players[i].copy();
+				new_table.players.push(this.players[i].copy());
 		}
 		return new_table;
 	}

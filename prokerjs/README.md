@@ -149,16 +149,44 @@ p.cards = [new Card('a','c'), new Card('a','s')]
   - Proker
 
 ```js
-t = new Table(6);
+t = new Table(3);
 // Opcional to set 
   cards = [new Card('A','s'), new Card('a','c')];
   t.deal_to_player(t.players[0],cards);
   cards = [new Card('K','s'), new Card('t','h')];
   t.deal_to_player(t.players[1],cards);
-  cards = [new Card('k','c'), new Card('q','d'), new Card('j','d')];
+  cards = [new Card('k','c'), new Card('q','d'), new Card('j','d'), new Card('t','c')];
   t.deal_to_table(cards);
 //
 p = new Proker(t);
 p.compute(10000);
+// p.table.players[5].cards
+```
+
+```js
+t = new Table(3);
+// Opcional to set 
+  cards = [new Card('A','s'), new Card('a','c')];
+  t.deal_to_player(t.players[0],cards);
+  cards = [new Card('K','s'), new Card('t','h')];
+  t.deal_to_player(t.players[1],cards);
+  cards = [new Card('k','c'), new Card('q','d'), new Card('j','d'), new Card('t','c')];
+  t.deal_to_table(cards);
+//
+p = new Proker(t);
+p.compute(10000);
+p.show();
+// p.table.players[5].cards
+```
+
+```js
+  t = new Table(2);
+  p = new Proker(t);
+  cards = [new Card('A','s'), new Card('j','s')];
+  t.deal_to_player(t.players[0],cards);
+  cards = [new Card('6','h'), new Card('6','h')];
+  t.deal_to_player(t.players[1],cards);
+  p.compute(10000);
+  p.show();
 // p.table.players[5].cards
 ```

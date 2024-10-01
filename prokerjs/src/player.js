@@ -18,7 +18,6 @@ export default class Player {
 			if (this.cards[i] != null)
 				new_player.cards[i] = this.cards[i].copy();
 		}
-		new_player.cards = this.cards;
 		if (this.hand != null) 
 			new_player.hand = this.hand.copy();
 		return new_player;

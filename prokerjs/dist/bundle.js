@@ -269,7 +269,6 @@
         if (this.cards[i] != null)
           new_player.cards[i] = this.cards[i].copy();
       }
-      new_player.cards = this.cards;
       if (this.hand != null)
         new_player.hand = this.hand.copy();
       return new_player;
@@ -373,10 +372,11 @@
           new_table.cards[i] = this.cards[i].copy();
       }
       new_table.deck = this.deck.copy();
+      new_table.deck.shuffle();
       new_table.players = [];
       for (let i = 0; i < this.players.length; i++) {
         if (this.players[i] != null)
-          new_table.players[i] = this.players[i].copy();
+          new_table.players.push(this.players[i].copy());
       }
       return new_table;
     }
@@ -439,12 +439,13 @@
       this.table = table;
     }
     compute(times) {
+      if (times < 1) throw new Error("times must be greater than 0");
+      this.reset_stats();
+      let aux_table = null;
       for (let i = 0; i < times; i++) {
-        let aux_table = this.table.copy();
-        debugger;
+        aux_table = this.table.copy();
         aux_table.full_deal_random();
         aux_table.player_hands();
-        aux_table.show();
         let winners = aux_table.winners();
         this.table.players.forEach((p) => {
           let is_winner = false;
@@ -458,6 +459,66 @@
           } else p.loses++;
         });
       }
+    }
+    reset_stats() {
+      this.table.players.forEach((p) => {
+        p.wins = 0;
+        p.draws = 0;
+        p.loses = 0;
+      });
+    }
+    tableToString() {
+      let ret_str = "";
+      ret_str += "Table\n	";
+      this.table.cards.forEach((c) => {
+        if (c != null)
+          ret_str += c.toString() + " ";
+        else
+          ret_str += "XX ";
+      });
+      ret_str += "\n";
+      return ret_str;
+    }
+    playerToString(player) {
+      let ret_str = "";
+      ret_str += `${player.name} |`;
+      player.cards.forEach((c) => {
+        if (c != null)
+          ret_str += ` ${c.toString()}`;
+        else
+          ret_str += " XX";
+      });
+      return ret_str;
+    }
+    playersToString() {
+      let ret_str = "";
+      this.table.show();
+      this.table.players.forEach((p) => {
+        let total = p.wins + p.draws + p.loses;
+        let pcent_wins = p.wins / total * 100;
+        let pcent_draws = p.draws / total * 100;
+        let pcent_loses = p.loses / total * 100;
+        let wins_str = String(p.wins).padStart(total.toString().length, " ");
+        let draws_str = String(p.draws).padStart(total.toString().length, " ");
+        let loses_str = String(p.loses).padStart(total.toString().length, " ");
+        ret_str += this.playerToString(p) + "\n";
+        ret_str += `	Wins: 	${wins_str}	${pcent_wins.toFixed(2).padStart(6, " ")}%
+`;
+        ret_str += `	Draws:	${draws_str}	${pcent_draws.toFixed(2).padStart(6, " ")}%
+`;
+        ret_str += `	Loses:	${loses_str}	${pcent_loses.toFixed(2).padStart(6, " ")}%
+`;
+      });
+      return ret_str;
+    }
+    toString() {
+      let ret_str = "";
+      ret_str += this.tableToString();
+      ret_str += this.playersToString();
+      return ret_str;
+    }
+    show() {
+      console.log(this.toString());
     }
   };
 
