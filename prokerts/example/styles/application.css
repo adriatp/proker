@@ -1,0 +1,23 @@
+.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+h1 {
+  color: #ffa500;
+}
+
+#modal_content {
+  background-color: #0f0f0f !important;
+}
+
+.card {
+  width: 500px;
+  height: 500px;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.modal-dialog {
+  max-width: 700px;
+}
