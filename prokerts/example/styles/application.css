@@ -12,12 +12,11 @@ h1 {
 }
 
 .card {
-  width: 500px;
-  height: 500px;
-  background-repeat: no-repeat;
-  display: inline-block;
+  width: auto;
+  max-height: 60px;
+  background: none;
 }
 
 .modal-dialog {
-  max-width: 700px;
+  max-width: 760px;
 }
