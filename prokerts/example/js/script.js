@@ -1,6 +1,6 @@
 loadCards = () => {
   // Initialize game
-  let p = new Proker();
+  let p = new Proker(2);
   loadTableCards();
   loadModalCards();
 };

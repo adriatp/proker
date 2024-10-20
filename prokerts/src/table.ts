@@ -19,8 +19,8 @@ export default class Table {
   }
 
   deal_to_player(player: Player, cards: (Card | null)[]): void {
+    this.deck.return_cards(player.cards);
     if (cards.length > 2) throw new Error("Players can only take 2 cards");
-    if (cards.length < 1) throw new Error("Must deal at least 1 card");
 
     cards.forEach((c) => {
       if (!this.deck.is_free_card(c)) {

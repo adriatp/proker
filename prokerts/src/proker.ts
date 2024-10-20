@@ -103,6 +103,15 @@ export default class Proker {
     return ret_str;
   }
 
+  dealToPlayer(player: number, cards: [([string, string])?, ([string, string])?]): void {
+    let cards = [];
+    for (let i=0; i<2; i++) {
+      const card = new Card(cards[i][0], cards[i][1]);
+      cards.push
+      this.table.deal_to_player(players[player], cards);
+    }
+  }
+
   toString(): string {
     let ret_str = this.tableToString();
     ret_str += this.playersToString();

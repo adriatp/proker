@@ -48,6 +48,16 @@ export default class Deck {
     );
   }
 
+  return_cards(cards: (Card | null)[]): void {
+    for (let i=0; i<cards.length; i++) {
+      if (cards[i] instanceof Card) {
+        if (this.is_free_card(cards[i])) {
+          this.cards.push(cards[i]);
+        }
+      }
+    }
+  }
+
   copy(): Deck {
     const new_deck = new Deck();
     new_deck.cards = this.cards.map((card) => card.copy());
