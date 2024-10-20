@@ -4,8 +4,16 @@ import Player from "./player.ts";
 export default class Proker {
   table: Table;
 
-  constructor(table: Table) {
-    this.table = table;
+  constructor(n_players: number);
+  constructor(table: Table);
+  constructor(param1: number | Table) {
+    if (typeof param1 === "number") {
+      this.table = new Table(param1);
+    } else if (typeof param1 === Table) {
+      this.table = param1;
+    } else {
+      throw new Error("Parámetro no válido");
+    }
   }
 
   compute(times: number): void {

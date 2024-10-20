@@ -16,7 +16,7 @@ A library to calculate the probabilities of a Texas Hold'em Poker hand using a M
   - [x] Set ranks
   - [x] Compare hands
   - [x] Deal specific/random cards
-  - [ ] Probabilities
+  - [x] Probabilities
   - [ ] Concurrency
 - [ ] API
 - [ ] Documentation
@@ -181,11 +181,11 @@ p.show();
 
 ```js
   t = new Table(2);
-  p = new Proker(t);
   cards = [new Card('A','s'), new Card('j','s')];
   t.deal_to_player(t.players[0],cards);
   cards = [new Card('6','h'), new Card('6','h')];
   t.deal_to_player(t.players[1],cards);
+  p = new Proker(t);
   p.compute(10000);
   p.show();
 // p.table.players[5].cards

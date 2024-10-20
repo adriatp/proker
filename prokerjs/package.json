@@ -1,8 +1,9 @@
 {
   "name": "prokerjs",
   "version": "1.0.0",
-  "description": "A Holdem Texas Poker probability library",
+  "description": "Texas Hold'em Poker Probability Library",
   "scripts": {
+    "prepublishOnly": "npm run build",
     "start": "npx esbuild src/index.js --bundle --outfile=dist/bundle.js --watch",
     "build": "esbuild src/index.js --bundle --outfile=dist/bundle.js",
     "test": "mocha"

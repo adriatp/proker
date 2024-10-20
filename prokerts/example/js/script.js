@@ -1,4 +1,16 @@
 loadCards = () => {
+  // Initialize game
+  let p = new Proker();
+  loadTableCards();
+  loadModalCards();
+};
+
+loadTableCards = () => {
+  const table_cards = document.querySelector('#table_cards');
+  
+};
+
+loadModalCards = () => {
   const modal_cards = document.querySelector('#modal_cards');
   modal_cards.textContent = '';
   for (let i=0; i<4; i++) {
@@ -15,6 +27,18 @@ loadCards = () => {
     }
     modal_cards.appendChild(row);
   }
-}
+};
+
+generateGrid = () => {
+  const gridContainer = document.getElementById('gridContainer');
+  const totalItems = 9 * 5;
+  for (let i = 1; i <= totalItems; i++) {
+    const gridItem = document.createElement('div');
+    gridItem.classList.add('grid-item');
+    gridItem.textContent = i;
+    gridContainer.appendChild(gridItem);
+  }
+};
 
 document.addEventListener('DOMContentLoaded', loadCards);
+// document.addEventListener('DOMContentLoaded', generateGrid);

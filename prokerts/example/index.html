@@ -7,29 +7,27 @@
   <link rel="stylesheet" href="styles/application.css">
 </head>
 <body class="dark">
-  
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">
-          Abrir Modal
-        </button>
 
-        <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content" id="modal_content">
-              <div class="modal-header">
-                <h5 class="modal-title">Cartas de la mesa</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-              </div>
-              <div class="modal-body">
-                <div id="modal_cards" class="col-12"></div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Done</button>
-              </div>
-            </div>
-          </div>
+  <div class="table-cards"></div>
+
+  <div class="grid-container" id="gridContainer"></div>
+
+  <button type="button" class="btn btn-primary btn-card" data-bs-toggle="modal" data-bs-target="#modal">
+    Abrir Modal
+  </button>
+
+  <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" id="modal_content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cartas de la mesa</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div id="modal_cards" class="col-12"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Done</button>
         </div>
       </div>
     </div>
