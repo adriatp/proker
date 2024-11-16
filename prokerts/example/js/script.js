@@ -1,6 +1,7 @@
+const proker = new Proker(2);
+
 loadCards = () => {
   // Initialize game
-  let p = new Proker(2);
   loadTableCards();
   loadModalCards();
 };
@@ -20,7 +21,10 @@ loadModalCards = () => {
       const card_div = document.createElement('div');
       const card_img = document.createElement('img');
       card_div.classList.add('col-auto', 'p-1');
-      card_img.classList.add('img-fluid', 'card');
+      card_div.addEventListener('click', function() {
+        card_div.classList.toggle('selected');
+      });
+      card_img.classList.add('img-fluid', 'card', 'selectable-card');
       card_img.src = `./assets/images/cards/${(j+1)+(i*13)}.png`;
       card_div.appendChild(card_img);
       row.appendChild(card_div);

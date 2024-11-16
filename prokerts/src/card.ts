@@ -37,6 +37,13 @@ export default class Card {
     this.number = Card.numbers.indexOf(_tmpNumber);
   }
 
+  static fromArray(cards: [string, string][]): (Card | null)[] {
+    return cards.map(card => {
+      if (card === undefined) return null;
+      return new Card(card[0], card[1]);
+    });
+  }
+
   copy(): Card {
     return new Card(Card.numbers[this.number], Card.suits[this.suite]);
   }

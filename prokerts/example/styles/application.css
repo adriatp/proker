@@ -52,3 +52,12 @@ html, body {
   right: 0;
   bottom: 0;
 }
+
+.selectable-card {
+  cursor: pointer;
+  border: none;
+}
+
+.selected {
+  background-color: gold;
+}

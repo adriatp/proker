@@ -1,5 +1,6 @@
 import Table from "./table.ts";
 import Player from "./player.ts";
+import Card from "./card.ts";
 
 export default class Proker {
   table: Table;
@@ -9,7 +10,7 @@ export default class Proker {
   constructor(param1: number | Table) {
     if (typeof param1 === "number") {
       this.table = new Table(param1);
-    } else if (typeof param1 === Table) {
+    } else if (param1 instanceof Table) {
       this.table = param1;
     } else {
       throw new Error("Parámetro no válido");
@@ -103,13 +104,8 @@ export default class Proker {
     return ret_str;
   }
 
-  dealToPlayer(player: number, cards: [([string, string])?, ([string, string])?]): void {
-    let cards = [];
-    for (let i=0; i<2; i++) {
-      const card = new Card(cards[i][0], cards[i][1]);
-      cards.push
-      this.table.deal_to_player(players[player], cards);
-    }
+  dealToPlayer(player: number, cards: [[string, string], [string, string]]): void { 
+    this.table.deal_to_player(this.table.players[player], Card.fromArray(cards));
   }
 
   toString(): string {

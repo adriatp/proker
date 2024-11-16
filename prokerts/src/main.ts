@@ -18,6 +18,4 @@
 
 import Proker from "./proker.ts";
 
-if (typeof window !== 'undefined') {
-  (window as any).Proker = Proker;
-}
+(window as unknown as { Proker: typeof Proker }).Proker = Proker;
